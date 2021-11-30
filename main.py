@@ -17,6 +17,9 @@ starter_encouragements = [
   "You are a great person/bot!"
 ]
 
+if "responding" not in db.keys():
+  db["responding"] = True
+
 def get_quote():
   response = requests.get("https://zenquotes.io/api/random")
   json_data = json.loads(response.text)
@@ -24,7 +27,7 @@ def get_quote():
   return(quote)
 
 def update_encouragements(encouraging_message):
-  if "encouragements" in db.key():
+  if "encouragements" in db.keys():
     encouragements = db["encouragements"]
     encouragements.append(encouraging_message)
     db["encouragements"] = encouragements
@@ -97,20 +100,21 @@ async def on_message(message):
   if message.content.startswith('spam'):
     await message.channel.send('https://giphy.com/gifs/spam-Hae1NrAQWyKA')
 
-  if message.content.startswith('!inspire'):
-    quote = get_quote()
-    await message.channel.send(quote)
-
-  options = starter_encouragements
-  if "encouragements" in db.keys():
-    options = options + db["encouragements"]
-  
   if message.content.startswith('!bot-info'):
     quote = get_quote()
     await message.channel.send('version 1.0, last updated on: November 30, 2021.')
 
-  if any(word in message.content for word in sad_words):
-    await message.channel.send(random.choice(options))
+  if message.content.startswith('!inspire'):
+    quote = get_quote()
+    await message.channel.send(quote)
+
+  if db["responding"]:
+    options = starter_encouragements
+    if "encouragements" in db.keys():
+      options = options + db["encouragements"]
+
+    if any(word in message.content for word in sad_words):
+      await message.channel.send(random.choice(options))
 
   if message.content.startswith("$new"):
     encouraging_message = message.content.split("$new ",1)[1]
