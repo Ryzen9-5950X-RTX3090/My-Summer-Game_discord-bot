@@ -114,7 +114,7 @@ async def on_message(message):
 
   if message.content.startswith("$new"):
     encouraging_message = message.content.split("$new ",1)[1]
-    update encouragements(encouraging_message)
+    update_encouragements(encouraging_message)
     await message.channel.send("The new encouraging message has been added to the database.")
 
   if message.content.startswith("$del"):
