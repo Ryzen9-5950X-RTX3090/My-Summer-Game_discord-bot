@@ -8,7 +8,7 @@ from replit import db
 
 client = discord.Client()
 
-sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh", "outraged", "raged", "ticked", "not great"]
+sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh", "outraged", "raged", "ticked", "not great", "terrible"]
 
 starter_encouragements = [
   "Cheer up!",
