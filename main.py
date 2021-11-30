@@ -103,6 +103,10 @@ async def on_message(message):
   if message.content.startswith('!bot-info'):
     quote = get_quote()
     await message.channel.send('version 1.0, last updated on: November 30, 2021, created on: November 30, 2021.')
+  
+  if message.content.startswith('updates'):
+    quote = get_quote()
+    await message.channel.send('WARNING: Do not turn of your PC. It is currently 50% done of installing the latest software upgrades! ---------->>')
 
   if message.content.startswith('!inspire'):
     quote = get_quote()
