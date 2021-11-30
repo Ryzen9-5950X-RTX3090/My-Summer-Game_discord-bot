@@ -4,6 +4,7 @@ import requests
 import json
 import random
 from replit import db
+from keep_alive import keep_alive
 
 
 client = discord.Client()
@@ -108,6 +109,38 @@ async def on_message(message):
     quote = get_quote()
     await message.channel.send('WARNING: Do not turn of your PC. It is currently 50% done of installing the latest software upgrades! This should take aprx. 1-4 hours. ---------->>')
 
+  if message.content.startswith('birthday'):
+    quote = get_quote()
+    await message.channel.send('Happy birthday!')
+
+  if message.content.startswith('christmas'):
+    quote = get_quote()
+    await message.channel.send('Merry Christmas!')
+
+  if message.content.startswith('thanksgiving'):
+    quote = get_quote()
+    await message.channel.send('Happy Thanksgiving!')
+
+  if message.content.startswith('halloween'):
+    quote = get_quote()
+    await message.channel.send('Happy Halloween!')
+
+  if message.content.startswith('4th of July'):
+    quote = get_quote()
+    await message.channel.send('Happy 4th of July!')
+
+  if message.content.startswith('new year'):
+    quote = get_quote()
+    await message.channel.send('Happy New Year!')
+
+  if message.content.startswith('!github'):
+    quote = get_quote()
+    await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090?tab=repositories')
+
+  if message.content.startswith('!website'):
+    quote = get_quote()
+    await message.channel.send('https://1000yearslater.me/')
+
   if message.content.startswith('!inspire'):
     quote = get_quote()
     await message.channel.send(quote)
@@ -148,5 +181,9 @@ async def on_message(message):
     else:
       db["responding"] = False
       await message.channel.send("Responding is off.")
+
+keep_alive()
+token = os.environ.get("DiscordBot_token")
+client.run(token)
 
 client.run(os.environ['DiscordBot_token'])
