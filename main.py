@@ -3,11 +3,12 @@ import os
 import requests
 import json
 import random
+from replit import db
 
 
 client = discord.Client()
 
-sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh"]
+sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh", "outraged", "raged", "ticked", "not great"]
 
 starter_encouragements = [
   "Cheer up!",
@@ -21,6 +22,20 @@ def get_quote():
   json_data = json.loads(response.text)
   quote = json_data[0]['q'] + " -" + json_data[0]['a']
   return(quote)
+
+def update_encouragements(encouraging_message)
+  if "encouragements" in db.key():
+    encouragements = db["encouragements"]
+    encouragements.append(encouraging_message)
+    db["encouragements"] = encouragements
+  else:
+    db["encouragements"] = [encouraging_message]
+
+def delete_encouragement(index):
+  encouragements = db["encouragements"]
+  if len(encouragements) > index:
+    del encouragements[index]
+    db ["encouragements"] = encouragements
 
 @client.event
 async def on_ready():
@@ -85,13 +100,29 @@ async def on_message(message):
   if message.content.startswith('!inspire'):
     quote = get_quote()
     await message.channel.send(quote)
+
+  options = starter_encouragements
+  if "encouragements" in db.keys():
+    options = options + db["encouragements"]
   
   if message.content.startswith('!bot-info'):
     quote = get_quote()
     await message.channel.send('version 1.0, last updated on: November 30, 2021.')
 
   if any(word in message.content for word in sad_words):
-    await message.channel.send(random.choice
-    (starter_encouragements))
+    await message.channel.send(random.choice(options))
+
+  if message.content.startswith($new):
+    encouraging_message = message.content.split("$new ",1)[1]
+    update encouragements(encouraging_message)
+    await message.channel.send("The new encouraging message has been added to the database.")
+
+  if message.content.startswith("$del"):
+   encouragements = [] 
+   if "encouragements" in db.keys():
+     index = int(message.content.split("$del", 1)[1])
+     delete_encouragement(index)
+     encouragements = db["encouragements"]
+    await message.channel.send(encouragements)
 
 client.run(os.environ['DiscordBot_token'])
