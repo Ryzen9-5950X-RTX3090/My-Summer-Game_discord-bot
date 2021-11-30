@@ -112,15 +112,15 @@ async def on_message(message):
   if any(word in message.content for word in sad_words):
     await message.channel.send(random.choice(options))
 
-  if message.content.startswith($new):
-    encouraging_message = message.content.split("$new ",1)[1]
+  if message.content.startswith(!new):
+    encouraging_message = message.content.split("!new ",1)[1]
     update encouragements(encouraging_message)
     await message.channel.send("The new encouraging message has been added to the database.")
 
-  if message.content.startswith("$del"):
+  if message.content.startswith("!del"):
    encouragements = [] 
    if "encouragements" in db.keys():
-     index = int(message.content.split("$del", 1)[1])
+     index = int(message.content.split("!del", 1)[1])
      delete_encouragement(index)
      encouragements = db["encouragements"]
     await message.channel.send(encouragements)
