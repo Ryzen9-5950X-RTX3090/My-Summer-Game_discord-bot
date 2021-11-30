@@ -15,4 +15,4 @@ async def on_message(message):
   if message.content.startswith('$hello'):
     await message.channel.send('Hello!')
 
-client.run(my_secret = os.environ['DiscordBot_token'])
+client.run(os.environ['DiscordBot_token'])
