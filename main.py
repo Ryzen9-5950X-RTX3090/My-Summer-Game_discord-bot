@@ -123,6 +123,6 @@ async def on_message(message):
      index = int(message.content.split("$del", 1)[1])
      delete_encouragement(index)
      encouragements = db["encouragements"]
-    await message.channel.send(encouragements)
+   await message.channel.send(encouragements)
 
 client.run(os.environ['DiscordBot_token'])
