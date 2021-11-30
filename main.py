@@ -106,7 +106,7 @@ async def on_message(message):
   
   if message.content.startswith('updates'):
     quote = get_quote()
-    await message.channel.send('WARNING: Do not turn of your PC. It is currently 50% done of installing the latest software upgrades! ---------->>')
+    await message.channel.send('WARNING: Do not turn of your PC. It is currently 50% done of installing the latest software upgrades! This should take aprx. 1-4 hours. ---------->>')
 
   if message.content.startswith('!inspire'):
     quote = get_quote()
