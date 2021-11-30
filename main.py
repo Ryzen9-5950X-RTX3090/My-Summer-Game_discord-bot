@@ -129,4 +129,20 @@ async def on_message(message):
      encouragements = db["encouragements"]
    await message.channel.send(encouragements)
 
+  if message.content.startswith("$list"):
+    encouragements = []
+    if "encouragements" in db.keys():
+      encouragements = db["encouragements"]
+    await message.channel.send(encouragements)
+
+  if message.content.startswith("$responding"):
+    value = message.content.split("$responding ",1)[1]
+
+    if value.lower () == "true":
+      db["responding"] = True
+      await message.channel.send("Responding is on.")
+    else:
+      db["responding"] = False
+      await message.channel.send("Responding is off.")
+
 client.run(os.environ['DiscordBot_token'])
