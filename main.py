@@ -23,7 +23,7 @@ def get_quote():
   quote = json_data[0]['q'] + " -" + json_data[0]['a']
   return(quote)
 
-def update_encouragements(encouraging_message)
+def update_encouragements(encouraging_message):
   if "encouragements" in db.key():
     encouragements = db["encouragements"]
     encouragements.append(encouraging_message)
