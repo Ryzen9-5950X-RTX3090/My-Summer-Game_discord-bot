@@ -57,4 +57,10 @@ async def on_message(message):
   if message.content.startswith('!source-code'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/')
 
+  if message.content.startswith('!art-designers'):
+    await message.channel.send('@Wolvenare#7669, @Ryzen9-5950X, 64GB RAM, RTX 3090#0001, @Nova Supreme#8855, and @becca#1828.')
+    
+  if message.content.startswith('spam'):
+    await message.channel.send('https://giphy.com/gifs/spam-Hae1NrAQWyKA')
+
 client.run(os.environ['DiscordBot_token'])
