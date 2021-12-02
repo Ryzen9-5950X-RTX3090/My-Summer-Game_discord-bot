@@ -1,3 +1,8 @@
+# My Summer Game bot
+# made by: Ryzen9-5950X-RTX3090
+# version: 2.0
+# last updated on: December 2, 2021
+
 import discord
 import os
 import requests
@@ -53,7 +58,13 @@ async def on_message(message):
   if message.content.startswith('hello'):
     await message.channel.send('Hello!')
 
+  if message.content.startswith('Hello'):
+    await message.channel.send('Hello!')
+
   if message.content.startswith('hru'):
+    await message.channel.send('I am doing great, you?')
+
+  if message.content.startswith('HRU'):
     await message.channel.send('I am doing great, you?')
 
   if message.content.startswith('great'):
@@ -65,6 +76,9 @@ async def on_message(message):
   if message.content.startswith('sup'):
     await message.channel.send('sup weirdo')
 
+  if message.content.startswith('Sup'):
+    await message.channel.send('sup weirdo')
+
   if message.content.startswith('weirdest'):
     await message.channel.send('no u')
 
@@ -74,17 +88,32 @@ async def on_message(message):
   if message.content.startswith('bye'):
     await message.channel.send('Bye weirdo!')
 
+  if message.content.startswith('Bye'):
+    await message.channel.send('Bye weirdo!')
+
   if message.content.startswith('gn'):
     await message.channel.send('gn weirdo!')
 
+  if message.content.startswith('GN'):
+    await message.channel.send('gn weirdo!')
+
+  if message.content.startswith('GM'):
+    await message.channel.send('gm weirdo!')
+
+  if message.content.startswith('gm'):
+    await message.channel.send('gm weirdo!')
+
   if message.content.startswith('ttyl'):
+    await message.channel.send('Ok see ya then')
+
+  if message.content.startswith('TTYL'):
     await message.channel.send('Ok see ya then')
 
   if message.content.startswith('!release-date'):
     await message.channel.send('Hello! The planned release date for My Summer Game is for Q4 of 2022!')
 
   if message.content.startswith('!ro.build.info'):
-    await message.channel.send('Closed beta 0.4.4, built on December 1, 2021, released on December 1, 2021.')
+    await message.channel.send('Closed beta 0.4.4, built on December 1, 2021, released on December 2, 2021.')
 
   if message.content.startswith('!download'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/releases')
@@ -103,7 +132,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 1.0, last updated on: November 30, 2021, created on: November 30, 2021.')
+    await message.channel.send('version 2.0, last updated on: December 2, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
