@@ -1,6 +1,6 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# version: 2.0
+# version: 2.1
 # last updated on: December 2, 2021
 
 import discord
@@ -103,6 +103,12 @@ async def on_message(message):
   if message.content.startswith('gm'):
     await message.channel.send('gm weirdo!')
 
+  if message.content.startswith('bored'):
+    await message.channel.send('Sup bored, I am dad.')
+
+  if message.content.startswith('Bored'):
+    await message.channel.send('Sup bored, I am dad.')
+
   if message.content.startswith('ttyl'):
     await message.channel.send('Ok see ya then')
 
@@ -132,7 +138,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 2.0, last updated on: December 2, 2021, created on: November 30, 2021.')
+    await message.channel.send('version 2.1, last updated on: December 3, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
@@ -146,11 +152,23 @@ async def on_message(message):
     quote = get_quote()
     await message.channel.send('Merry Christmas!')
 
+  if message.content.startswith('Christmas'):
+    quote = get_quote()
+    await message.channel.send('Merry Christmas!')
+
   if message.content.startswith('thanksgiving'):
     quote = get_quote()
     await message.channel.send('Happy Thanksgiving!')
 
+  if message.content.startswith('Thanksgiving'):
+    quote = get_quote()
+    await message.channel.send('Happy Thanksgiving!')
+
   if message.content.startswith('halloween'):
+    quote = get_quote()
+    await message.channel.send('Happy Halloween!')
+
+  if message.content.startswith('Halloween'):
     quote = get_quote()
     await message.channel.send('Happy Halloween!')
 
@@ -162,6 +180,14 @@ async def on_message(message):
     quote = get_quote()
     await message.channel.send('Happy New Year!')
 
+  if message.content.startswith('New year'):
+    quote = get_quote()
+    await message.channel.send('Happy New Year!')
+
+  if message.content.startswith('New Year'):
+    quote = get_quote()
+    await message.channel.send('Happy New Year!')
+
   if message.content.startswith('!github'):
     quote = get_quote()
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090?tab=repositories')
@@ -169,6 +195,14 @@ async def on_message(message):
   if message.content.startswith('!website'):
     quote = get_quote()
     await message.channel.send('https://1000yearslater.me/')
+
+  if message.content.startswith('!bot-source-code'):
+    quote = get_quote()
+    await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_discord-bot/')
+
+  if message.content.startswith('!bot-commands'):
+    quote = get_quote()
+    await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_discord-bot/wiki/')
 
   if message.content.startswith('!inspire'):
     quote = get_quote()
