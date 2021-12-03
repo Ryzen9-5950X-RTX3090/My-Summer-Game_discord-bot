@@ -25,3 +25,7 @@ def awake(target, debug=False):
     r = Thread(target=ping, args=(target,debug,))
     t.start()
     r.start()
+
+def neverSleep():
+    t = Thread(target=run)
+    t.start()

@@ -9,10 +9,15 @@ import requests
 import json
 import random
 from replit import db
-from neverSleep import awake
+from neverSleep import neverSleep
+from discord.ext import commands
+
 
 
 client = discord.Client()
+
+### Connection to discord
+client = commands.Bot(command_prefix=".")
 
 sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh", "outraged", "raged", "ticked", "not great", "terrible"]
 
@@ -280,5 +285,24 @@ async def on_message(message):
 neverSleep()
 token = os.environ.get("DiscordBot_token")
 client.run(token)
+
+### Extensions(cogs) Load and Unload
+@client.command(brief = 'Load an extension')
+async def load(ctx, extension):
+    client.load_extension(f'extensions.{extension}')
+    await ctx.send(f'{extension} extension loaded.')
+
+@client.command(brief = 'Unload an extension')
+async def unload(ctx, extension):
+    client.unload_extension(f'extensions.{extension}')
+    await ctx.send(f'{extension} extension unloaded.')
+
+# Auto Load extensions
+for filename in os.listdir('./extensions'):
+    if filename.endswith('.py'):
+        client.load_extension(f'extensions.{filename[:-3]}')
+        print(f'loaded {filename[:-3]}')
+    else:
+        print(f'Unable to load {filename[:-3]}')
 
 client.run(os.environ['DiscordBot_token'])
