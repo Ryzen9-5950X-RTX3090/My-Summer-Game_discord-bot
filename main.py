@@ -1,6 +1,6 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# version: 2.1
+# version: 2.1.1
 # last updated on: December 2, 2021
 
 import discord
@@ -9,7 +9,7 @@ import requests
 import json
 import random
 from replit import db
-from keep_alive import keep_alive
+from neverSleep import awake
 
 
 client = discord.Client()
@@ -31,6 +31,18 @@ def get_quote():
   json_data = json.loads(response.text)
   quote = json_data[0]['q'] + " -" + json_data[0]['a']
   return(quote)
+
+def get_joke():
+    response = requests.get('https://official-joke-api.appspot.com/random_joke')
+    json_data = json.loads(response.text)
+    joke = json_data['setup'] + '\n\n' + json_data['punchline']
+    return joke
+
+def get_programming_joke():
+    response = requests.get('https://official-joke-api.appspot.com/jokes/programming/random')
+    json_data = json.loads(response.text)
+    joke = json_data[0]['setup'] + '\n\n' + json_data[0]['punchline']
+    return joke
 
 def update_encouragements(encouraging_message):
   if "encouragements" in db.keys():
@@ -138,13 +150,25 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 2.1, last updated on: December 3, 2021, created on: November 30, 2021.')
+    await message.channel.send('version 2.1.1, last updated on: December 3, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
     await message.channel.send('WARNING: Do not turn of your PC. It is currently 50% done of installing the latest software upgrades! This should take aprx. 1-4 hours. ---------->>')
 
   if message.content.startswith('birthday'):
+    quote = get_quote()
+    await message.channel.send('Happy birthday!')
+
+  if message.content.startswith('Birthday'):
+    quote = get_quote()
+    await message.channel.send('Happy birthday!')
+  
+  if message.content.startswith('bday'):
+    quote = get_quote()
+    await message.channel.send('Happy birthday!')
+
+  if message.content.startswith('BDAY'):
     quote = get_quote()
     await message.channel.send('Happy birthday!')
 
@@ -208,6 +232,14 @@ async def on_message(message):
     quote = get_quote()
     await message.channel.send(quote)
 
+  if message.content.startswith('!jokes'):
+    joke = get_joke()
+    await message.channel.send(joke)
+
+  if message.content.startswith('!programming-jokes'):
+    joke = get_programming_joke()
+    await message.channel.send(joke)
+
   if db["responding"]:
     options = starter_encouragements
     if "encouragements" in db.keys():
@@ -245,7 +277,7 @@ async def on_message(message):
       db["responding"] = False
       await message.channel.send("Responding is off.")
 
-keep_alive()
+neverSleep()
 token = os.environ.get("DiscordBot_token")
 client.run(token)
 
