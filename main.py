@@ -1,8 +1,9 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# version: 2.1.5
+# stable bot version: 2.1.6
 # last updated on: December 6, 2021
 # created on November 30, 2021
+# unstable test bot version: 3.0.0
 
 
 import discord
@@ -137,7 +138,7 @@ async def on_message(message):
     await message.channel.send('Hello! The planned release date for My Summer Game is for Q4 of 2022!')
 
   if message.content.startswith('!ro.build.info'):
-    await message.channel.send('Closed beta 0.4.4, built on December 1, 2021, released on December 2, 2021.')
+    await message.channel.send('Closed beta 0.4.5, built on December 13, 2021, released on December 13, 2021.')
 
   if message.content.startswith('!download'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/releases')
@@ -156,7 +157,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 2.1.5, last updated on: December 6, 2021, created on: November 30, 2021.')
+    await message.channel.send('stable bot version: 2.1.6, unstable bot test version: 3.0.0, last updated on: December 6, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
