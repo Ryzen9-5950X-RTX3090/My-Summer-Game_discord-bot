@@ -1,6 +1,6 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# version: 2.1.3
+# version: 2.1.4
 # last updated on: December 5, 2021
 # created on November 30, 2021
 
@@ -20,7 +20,7 @@ client = discord.Client()
 ### Connection to discord
 client = commands.Bot(command_prefix=".")
 
-sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh", "outraged", "raged", "ticked", "not great", "terrible"]
+sad_words = ["sad", "depressed", "unhappy", "angry", "miserable", "pissed", "scared", "terrified", "overwhelmed", "stressed", "depressing", "horrible", "awful", "not good", "bad", "ugh", "outraged", "raged", "ticked", "not great", "terrible", "mad"]
 
 starter_encouragements = [
   "Cheer up!",
@@ -156,7 +156,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 2.1.3, last updated on: December 5, 2021, created on: November 30, 2021.')
+    await message.channel.send('version 2.1.4, last updated on: December 5, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
