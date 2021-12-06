@@ -1,6 +1,6 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# version: 2.1.2
+# version: 2.1.3
 # last updated on: December 5, 2021
 # created on November 30, 2021
 
@@ -156,7 +156,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 2.1.2, last updated on: December 5, 2021, created on: November 30, 2021.')
+    await message.channel.send('version 2.1.3, last updated on: December 5, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
@@ -249,7 +249,8 @@ async def on_message(message):
   if db["responding"]:
     options = starter_encouragements
     if "encouragements" in db.keys():
-      options = options + db["encouragements"]
+      for i in range(len(db["encouragements"])):
+        options.append(db["encouragements"][i])
 
     if any(word in message.content for word in sad_words):
       await message.channel.send(random.choice(options))
