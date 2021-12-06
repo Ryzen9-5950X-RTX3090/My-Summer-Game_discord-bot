@@ -1,9 +1,9 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# stable bot version: 2.1.7
+# stable bot version: 3.0.0
 # last updated on: December 6, 2021
 # created on November 30, 2021
-# unstable test bot version: 3.0.1
+# unstable test bot version: 4.0.0
 
 
 import discord
@@ -74,168 +74,119 @@ async def on_message(message):
   if message.author == client.user:
     return
 
-  if message.content.startswith('hello'):
+  if message.content.lower().startswith('hello'):
     await message.channel.send('Hello!')
 
-  if message.content.startswith('Hello'):
-    await message.channel.send('Hello!')
+  if message.content.lower().startswith('hola'):
+    await message.channel.send('Hola!')
 
-  if message.content.startswith('hru'):
+  if message.content.lower().startswith('hru'):
     await message.channel.send('I am doing great, you?')
 
-  if message.content.startswith('HRU'):
-    await message.channel.send('I am doing great, you?')
-
-  if message.content.startswith('great'):
+  if message.content.lower().startswith('great'):
     await message.channel.send('That is great to hear!')
 
-  if message.content.startswith('terrible'):
+  if message.content.lower().startswith('terrible'):
     await message.channel.send('What a shame!')
 
-  if message.content.startswith('sup'):
+  if message.content.lower().startswith('sup'):
     await message.channel.send('sup weirdo')
 
-  if message.content.startswith('Sup'):
-    await message.channel.send('sup weirdo')
-
-  if message.content.startswith('weirdest'):
+  if message.content.lower().startswith('weirdest'):
     await message.channel.send('no u')
 
-  if message.content.startswith('ur mom'):
+  if message.content.lower().startswith('ur mom'):
     await message.channel.send('no urs')
 
-  if message.content.startswith('bye'):
+  if message.content.lower().startswith('bye'):
     await message.channel.send('Bye weirdo!')
 
-  if message.content.startswith('Bye'):
-    await message.channel.send('Bye weirdo!')
-
-  if message.content.startswith('gn'):
+  if message.content.lower().startswith('gn'):
     await message.channel.send('gn weirdo!')
 
-  if message.content.startswith('GN'):
-    await message.channel.send('gn weirdo!')
-
-  if message.content.startswith('GM'):
+  if message.content.lower().startswith('gm'):
     await message.channel.send('gm weirdo!')
 
-  if message.content.startswith('gm'):
-    await message.channel.send('gm weirdo!')
-
-  if message.content.startswith('bored'):
+  if message.content.lower().startswith('bored'):
     await message.channel.send('Sup bored, I am dad.')
 
-  if message.content.startswith('Bored'):
-    await message.channel.send('Sup bored, I am dad.')
-
-  if message.content.startswith('ttyl'):
+  if message.content.lower().startswith('ttyl'):
     await message.channel.send('Ok see ya then')
 
-  if message.content.startswith('TTYL'):
-    await message.channel.send('Ok see ya then')
-
-  if message.content.startswith('!release-date'):
+  if message.content.lower().startswith('!release-date'):
     await message.channel.send('Hello! The planned release date for My Summer Game is for Q4 of 2022!')
 
-  if message.content.startswith('!ro.build.info'):
+  if message.content.lower().startswith('!ro.build.info'):
     await message.channel.send('Closed beta 0.4.5, built on December 13, 2021, released on December 13, 2021.')
 
-  if message.content.startswith('!download'):
+  if message.content.lower().startswith('!download'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/releases')
 
-  if message.content.startswith('!unity-info'):
+  if message.content.lower().startswith('!unity-info'):
     await message.channel.send('Unity 2D personal, version 2021.2.4f1')
 
-  if message.content.startswith('!source-code'):
+  if message.content.lower().startswith('!source-code'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/')
 
-  if message.content.startswith('!art-designers'):
+  if message.content.lower().startswith('!art-designers'):
     await message.channel.send('@Wolvenare#7669, @Ryzen9-5950X, 64GB RAM, RTX 3090#0001, @Nova Supreme#8855, and @becca#1828.')
     
-  if message.content.startswith('spam'):
+  if message.content.lower().startswith('spam'):
     await message.channel.send('https://giphy.com/gifs/spam-Hae1NrAQWyKA')
 
-  if message.content.startswith('!bot-info'):
+  if message.content.lower().startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('stable bot version: 2.1.7, unstable test bot version: 3.0.1, last updated on: December 6, 2021, created on: November 30, 2021.')
+    await message.channel.send('stable bot version: 3.0.0, unstable test bot version: 4.0.0, last updated on: December 6, 2021, created on: November 30, 2021.')
   
-  if message.content.startswith('updates'):
+  if message.content.lower().startswith('updates'):
     quote = get_quote()
     await message.channel.send('WARNING: Do not turn of your PC. It is currently 50% done of installing the latest software upgrades! This should take aprx. 1-4 hours. ---------->>')
 
-  if message.content.startswith('birthday'):
-    quote = get_quote()
-    await message.channel.send('Happy birthday!')
-
-  if message.content.startswith('Birthday'):
+  if message.content.lower().startswith('birthday'):
     quote = get_quote()
     await message.channel.send('Happy birthday!')
   
-  if message.content.startswith('bday'):
+  if message.content.lower().startswith('bday'):
     quote = get_quote()
     await message.channel.send('Happy birthday!')
 
-  if message.content.startswith('BDAY'):
-    quote = get_quote()
-    await message.channel.send('Happy birthday!')
-
-  if message.content.startswith('christmas'):
+  if message.content.lower().startswith('christmas'):
     quote = get_quote()
     await message.channel.send('Merry Christmas!')
 
-  if message.content.startswith('Christmas'):
-    quote = get_quote()
-    await message.channel.send('Merry Christmas!')
-
-  if message.content.startswith('thanksgiving'):
+  if message.content.lower().startswith('thanksgiving'):
     quote = get_quote()
     await message.channel.send('Happy Thanksgiving!')
 
-  if message.content.startswith('Thanksgiving'):
-    quote = get_quote()
-    await message.channel.send('Happy Thanksgiving!')
-
-  if message.content.startswith('halloween'):
+  if message.content.lower().startswith('halloween'):
     quote = get_quote()
     await message.channel.send('Happy Halloween!')
 
-  if message.content.startswith('Halloween'):
-    quote = get_quote()
-    await message.channel.send('Happy Halloween!')
-
-  if message.content.startswith('4th of July'):
+  if message.content.lower().startswith('4th of july'):
     quote = get_quote()
     await message.channel.send('Happy 4th of July!')
 
-  if message.content.startswith('new year'):
+  if message.content.lower().startswith('new year'):
     quote = get_quote()
     await message.channel.send('Happy New Year!')
 
-  if message.content.startswith('New year'):
-    quote = get_quote()
-    await message.channel.send('Happy New Year!')
-
-  if message.content.startswith('New Year'):
-    quote = get_quote()
-    await message.channel.send('Happy New Year!')
-
-  if message.content.startswith('!github'):
+  if message.content.lower().startswith('!github'):
     quote = get_quote()
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090?tab=repositories')
 
-  if message.content.startswith('!website'):
+  if message.content.lower().startswith('!website'):
     quote = get_quote()
     await message.channel.send('https://1000yearslater.me/')
 
-  if message.content.startswith('!bot-source-code'):
+  if message.content.lower().startswith('!bot-source-code'):
     quote = get_quote()
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_discord-bot/')
 
-  if message.content.startswith('!bot-commands'):
+  if message.content.lower().startswith('!bot-commands'):
     quote = get_quote()
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_discord-bot/wiki/')
 
-  if message.content.startswith('!inspire'):
+  if message.content.lower().startswith('!inspire'):
     quote = get_quote()
     await message.channel.send(quote)
 
@@ -256,12 +207,12 @@ async def on_message(message):
     if any(word in message.content for word in sad_words):
       await message.channel.send(random.choice(options))
 
-  if message.content.startswith("$new"):
+  if message.content.lower().startswith("$new"):
     encouraging_message = message.content.split("$new ",1)[1]
     update_encouragements(encouraging_message)
     await message.channel.send("The new encouraging message has been added to the database.")
 
-  # if message.content.startswith("$del"):
+  # if message.content.lower().startswith("$del"):
   # encouragements = [] 
   # if "encouragements" in db.keys():
   #   index = int(message.content.split("$del", 1)[1])
@@ -269,13 +220,13 @@ async def on_message(message):
   #   encouragements = db["encouragements"]
   # await message.channel.send(encouragements)
 
-  if message.content.startswith("$list"):
+  if message.content.lower().startswith("$list"):
     encouragements = []
     if "encouragements" in db.keys():
       encouragements = db["encouragements"]
     await message.channel.send(encouragements)
 
-  if message.content.startswith("$responding"):
+  if message.content.lower().startswith("$responding"):
     value = message.content.split("$responding ",1)[1]
 
     if value.lower () == "true":
