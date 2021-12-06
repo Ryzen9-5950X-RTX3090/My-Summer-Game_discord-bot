@@ -1,7 +1,7 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# version: 2.1.4
-# last updated on: December 5, 2021
+# version: 2.1.5
+# last updated on: December 6, 2021
 # created on November 30, 2021
 
 
@@ -38,17 +38,17 @@ def get_quote():
   quote = json_data[0]['q'] + " -" + json_data[0]['a']
   return(quote)
 
-def get_joke():
-    response = requests.get('https://official-joke-api.appspot.com/random_joke')
-    json_data = json.loads(response.text)
-    joke = json_data['setup'] + '\n\n' + json_data['punchline']
-    return joke
+# def get_joke():
+#    response = requests.get('https://official-joke-api.appspot.com/random_joke')
+#    json_data = json.loads(response.text)
+#    joke = json_data['setup'] + '\n\n' + json_data['punchline']
+#    return joke
 
-def get_programming_joke():
-    response = requests.get('https://official-joke-api.appspot.com/jokes/programming/random')
-    json_data = json.loads(response.text)
-    joke = json_data[0]['setup'] + '\n\n' + json_data[0]['punchline']
-    return joke
+# def get_programming_joke():
+   # response = requests.get('https://official-joke-api.appspot.com/jokes/programming/random')
+  #  json_data = json.loads(response.text)
+  #  joke = json_data[0]['setup'] + '\n\n' + json_data[0]['punchline']
+  #  return joke
 
 def update_encouragements(encouraging_message):
   if "encouragements" in db.keys():
@@ -156,7 +156,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('version 2.1.4, last updated on: December 5, 2021, created on: November 30, 2021.')
+    await message.channel.send('version 2.1.5, last updated on: December 6, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
@@ -238,13 +238,13 @@ async def on_message(message):
     quote = get_quote()
     await message.channel.send(quote)
 
-  if message.content.startswith('!jokes'):
-    joke = get_joke()
-    await message.channel.send(joke)
+ # if message.content.startswith('!jokes'):
+  #  joke = get_joke()
+ #   await message.channel.send(joke)
 
-  if message.content.startswith('!programming-jokes'):
-    joke = get_programming_joke()
-    await message.channel.send(joke)
+ # if message.content.startswith('!programming-jokes'):
+ #   joke = get_programming_joke()
+ #   await message.channel.send(joke)
 
   if db["responding"]:
     options = starter_encouragements
@@ -260,13 +260,13 @@ async def on_message(message):
     update_encouragements(encouraging_message)
     await message.channel.send("The new encouraging message has been added to the database.")
 
-  if message.content.startswith("$del"):
-   encouragements = [] 
-   if "encouragements" in db.keys():
-     index = int(message.content.split("$del", 1)[1])
-     delete_encouragement(index)
-     encouragements = db["encouragements"]
-   await message.channel.send(encouragements)
+  # if message.content.startswith("$del"):
+  # encouragements = [] 
+  # if "encouragements" in db.keys():
+  #   index = int(message.content.split("$del", 1)[1])
+  #   delete_encouragement(index)
+  #   encouragements = db["encouragements"]
+  # await message.channel.send(encouragements)
 
   if message.content.startswith("$list"):
     encouragements = []
