@@ -1,9 +1,9 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# stable bot version: 2.1.6
+# stable bot version: 2.1.7
 # last updated on: December 6, 2021
 # created on November 30, 2021
-# unstable test bot version: 3.0.0
+# unstable test bot version: 3.0.1
 
 
 import discord
@@ -157,7 +157,7 @@ async def on_message(message):
 
   if message.content.startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('stable bot version: 2.1.6, unstable bot test version: 3.0.0, last updated on: December 6, 2021, created on: November 30, 2021.')
+    await message.channel.send('stable bot version: 2.1.7, unstable test bot version: 3.0.1, last updated on: December 6, 2021, created on: November 30, 2021.')
   
   if message.content.startswith('updates'):
     quote = get_quote()
