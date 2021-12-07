@@ -1,7 +1,7 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# stable bot version: 3.0.0
-# last updated on: December 6, 2021
+# stable bot version: 3.0.1
+# last updated on: December 7, 2021
 # created on November 30, 2021
 # unstable test bot version: 4.0.0
 
@@ -114,7 +114,7 @@ async def on_message(message):
     await message.channel.send('Ok see ya then')
 
   if message.content.lower().startswith('!release-date'):
-    await message.channel.send('Hello! The planned release date for My Summer Game is for Q4 of 2022!')
+    await message.channel.send('Hello! The planned release date for My Summer Game is for December of 2022!')
 
   if message.content.lower().startswith('!ro.build.info'):
     await message.channel.send('Closed beta 0.4.5, built on December 13, 2021, released on December 13, 2021.')
@@ -136,7 +136,7 @@ async def on_message(message):
 
   if message.content.lower().startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('stable bot version: 3.0.0, unstable test bot version: 4.0.0, last updated on: December 6, 2021, created on: November 30, 2021.')
+    await message.channel.send('stable bot version: 3.0.1, unstable test bot version: 4.0.0, last updated on: December 7, 2021, created on: November 30, 2021.')
   
   if message.content.lower().startswith('updates'):
     quote = get_quote()
