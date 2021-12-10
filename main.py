@@ -1,9 +1,9 @@
 # My Summer Game bot
 # made by: Ryzen9-5950X-RTX3090
-# stable bot version: 3.0.1
-# last updated on: December 7, 2021
+# stable bot version: 3.1.0
+# last updated on: December 10, 2021
 # created on November 30, 2021
-# unstable test bot version: 4.0.0
+# unstable test bot version: 4.0.1
 
 
 import discord
@@ -117,13 +117,13 @@ async def on_message(message):
     await message.channel.send('Hello! The planned release date for My Summer Game is for December of 2022!')
 
   if message.content.lower().startswith('!ro.build.info'):
-    await message.channel.send('Closed beta 0.4.5, built on December 13, 2021, released on December 13, 2021.')
+    await message.channel.send('Closed beta 0.5.0, built on January 20, 2022, released on January 22, 2022.')
 
   if message.content.lower().startswith('!download'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/releases')
 
   if message.content.lower().startswith('!unity-info'):
-    await message.channel.send('Unity 2D personal, version 2021.2.4f1')
+    await message.channel.send('Unity 2D personal, version 2021.2.5f1')
 
   if message.content.lower().startswith('!source-code'):
     await message.channel.send('https://github.com/Ryzen9-5950X-RTX3090/My-Summer-Game_Unity-project/')
@@ -136,7 +136,7 @@ async def on_message(message):
 
   if message.content.lower().startswith('!bot-info'):
     quote = get_quote()
-    await message.channel.send('stable bot version: 3.0.1, unstable test bot version: 4.0.0, last updated on: December 7, 2021, created on: November 30, 2021.')
+    await message.channel.send('stable bot version: 3.1.0, unstable test bot version: 4.0.1, last updated on: December 10, 2021, created on: November 30, 2021.')
   
   if message.content.lower().startswith('updates'):
     quote = get_quote()
